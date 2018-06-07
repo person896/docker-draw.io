@@ -9,8 +9,8 @@ RUN apt-get update -y && \
 
 # Download
 RUN cd /tmp && \
-    wget https://github.com/person896/draw.io/archive/v${VERSION}.zip && \
-    unzip v${VERSION}.zip
+    wget https://github.com/person896/drawio/archive/master.zip && \
+    unzip drawio-master.zip
 
 RUN cd /tmp/drawio-${VERSION} && \
     cd /tmp/drawio-${VERSION}/etc/build && \
