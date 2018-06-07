@@ -9,7 +9,7 @@ RUN apt-get update -y && \
 
 # Download
 RUN cd /tmp && \
-    wget https://github.com/jgraph/draw.io/archive/v${VERSION}.zip && \
+    wget https://github.com/person896/draw.io/archive/v${VERSION}.zip && \
     unzip v${VERSION}.zip
 
 RUN cd /tmp/drawio-${VERSION} && \
