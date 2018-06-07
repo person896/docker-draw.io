@@ -1,6 +1,6 @@
 FROM tomcat:8-jre8
 
-LABEL maintainer="Florian JUDITH <florian.judith.b@gmail.com>"
+LABEL maintainer="Ian Tucker <ian.tucker@microhealthllc.com>"
 
 ENV VERSION=8.7.0
 
@@ -15,7 +15,7 @@ RUN cd /tmp && \
 RUN cd /tmp/drawio-master && \
     cd /tmp/drawio-master/etc/build && \
     ant war && \
-    cd /tmp/drawio-msater/build && \
+    cd /tmp/drawio-master/build && \
     unzip /tmp/drawio-master/build/draw.war -d $CATALINA_HOME/webapps/draw
 
 # Update server.xml to set Draw.io webapp to root
