@@ -12,11 +12,11 @@ RUN cd /tmp && \
     wget https://github.com/person896/drawio/archive/master.zip && \
     unzip master.zip
 
-RUN cd /tmp/drawio-${VERSION} && \
-    cd /tmp/drawio-${VERSION}/etc/build && \
+RUN cd /tmp/drawio-master && \
+    cd /tmp/drawio-master/etc/build && \
     ant war && \
-    cd /tmp/drawio-${VERSION}/build && \
-    unzip /tmp/drawio-${VERSION}/build/draw.war -d $CATALINA_HOME/webapps/draw
+    cd /tmp/drawio-msater/build && \
+    unzip /tmp/drawio-master/build/draw.war -d $CATALINA_HOME/webapps/draw
 
 # Update server.xml to set Draw.io webapp to root
 RUN cd $CATALINA_HOME && \
@@ -35,8 +35,8 @@ RUN cd $CATALINA_HOME && \
 # Cleanup
 RUN rm -r /var/lib/apt/lists/* && \
     rm -rf \
-    /tmp/v${VERSION}.zip \
-    /tmp/drawio-${VERSION}
+    /tmp/master.zip \
+    /tmp/drawio-master
 
 # Copy docker-entrypoint
 COPY docker-entrypoint.sh /
